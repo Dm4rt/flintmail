@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flintstones Webmail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="login-body">
+
+<div class="login-container">
+  <img src="assets/flintmail_logo.png" class="mail-logo" alt="Webmail">
+
+  <h2>Sign in</h2>
+
+  <input type="text" id="email" placeholder="Email address" />
+  <input type="password" id="password" placeholder="Password" />
+
+  <button onclick="login()">Sign in</button>
+
+  <p id="msg" class="msg"></p>
+
+  <p class="subtle-text">© 2025 Bedrock Secure Mail • For authorized users only</p>
+</div>
+
+<script src="mail.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flintstones Webmail — Inbox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="mail-body">
+
+<div class="sidebar">
+  <h3>Mail</h3>
+  <ul>
+    <li class="active">Inbox</li>
+    <li>Sent</li>
+    <li>Drafts</li>
+    <li>Deleted</li>
+  </ul>
+</div>
+
+<div class="mail-list">
+  <h3>Inbox</h3>
+
+  <div class="mail-item" onclick="openMail('msg1')">
+    <strong>[IR-2025-017]</strong> Security Follow-up  
+    <p class="snippet">Please review the updated incident report...</p>
+  </div>
+
+  <div class="mail-item" onclick="openMail('msg2')">
+    <strong>Password Audit Reminder</strong>
+    <p class="snippet">Your password pattern was flagged during review...</p>
+  </div>
+
+  <div class="mail-item" onclick="openMail('msg3')">
+    <strong>RE: Reactor noise logs</strong>
+    <p class="snippet">Attached is the acoustic profile you requested...</p>
+  </div>
+</div>
+
+<div class="mail-viewer">
+  <div id="msg1" class="mail-content hidden">
+    <h2>IR-2025-017 Security Update</h2>
+    <p>Team,</p>
+    <p>
+      The drone geolocation traced near Kish Island may indicate foreign ISR activity.
+      Ensure internal documents remain within approved systems.
+    </p>
+    <p class="muted"><strong>Attachment:</strong> IR-2025-017.pdf (redacted)</p>
+
+    <!-- OSINT breadcrumb -->
+    <!-- SECRET_LOCATION: /archive/old_logs_2023/ -->
+  </div>
+
+  <div id="msg2" class="mail-content hidden">
+    <h2>Password Audit Reminder</h2>
+    <p>
+      Our system detected that your password pattern matches known weak structures.
+      Please avoid using predictable templates such as:
+    </p>
+
+    <ul>
+      <li><code>rubble####</code></li>
+      <li><code>YabbaDabbaDo123</code></li>
+    </ul>
+
+    <!-- Hidden credential -->
+    <!-- TEMP-PASS: Flintstones!2024 -->
+  </div>
+
+  <div id="msg3" class="mail-content hidden">
+    <h2>Reactor Noise Logs</h2>
+    <p>
+      Per your request, the reactor acoustic profile is attached.
+      The humming frequency spike around 03:12 is consistent with coolant cavitation.
+    </p>
+
+    <!-- Hidden breadcrumb -->
+    <!-- AUDIO-LOG: /assets/logs/reactor_0312.wav -->
+  </div>
+</div>
+
+<script src="mail.js"></script>
+</body>
+</html>
