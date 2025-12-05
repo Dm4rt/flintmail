@@ -10,73 +10,34 @@
 <body class="mail-body">
 
 <div class="sidebar">
-  <h3>Mail</h3>
-  <ul>
-    <li class="active">Inbox</li>
-    <li>Sent</li>
-    <li>Drafts</li>
-    <li>Deleted</li>
+  <div class="user-chip">
+    <p id="userName">Loading...</p>
+    <p id="userEmail" class="muted"></p>
+  </div>
+
+  <ul id="folderNav">
+    <li class="folder-item active" data-folder="inbox">Inbox</li>
+    <li class="folder-item" data-folder="sent">Sent</li>
+    <li class="folder-item" data-folder="drafts">Drafts</li>
+    <li class="folder-item" data-folder="deleted">Deleted</li>
   </ul>
 </div>
 
 <div class="mail-list">
-  <h3>Inbox</h3>
-
-  <div class="mail-item" onclick="openMail('msg1')">
-    <strong>[IR-2025-017]</strong> Security Follow-up  
-    <p class="snippet">Please review the updated incident report...</p>
+  <div class="list-header">
+    <div>
+      <h3 id="folderTitle">Inbox</h3>
+      <p id="folderDescription" class="muted">Latest intel threads synced across Flintmail.</p>
+    </div>
+    <span class="folder-count" id="folderCount"></span>
   </div>
-
-  <div class="mail-item" onclick="openMail('msg2')">
-    <strong>Password Audit Reminder</strong>
-    <p class="snippet">Your password pattern was flagged during review...</p>
-  </div>
-
-  <div class="mail-item" onclick="openMail('msg3')">
-    <strong>RE: Reactor noise logs</strong>
-    <p class="snippet">Attached is the acoustic profile you requested...</p>
-  </div>
+  <div id="mailItems" class="mail-items"></div>
 </div>
 
-<div class="mail-viewer">
-  <div id="msg1" class="mail-content hidden">
-    <h2>IR-2025-017 Security Update</h2>
-    <p>Team,</p>
-    <p>
-      The drone geolocation traced near Kish Island may indicate foreign ISR activity.
-      Ensure internal documents remain within approved systems.
-    </p>
-    <p class="muted"><strong>Attachment:</strong> IR-2025-017.pdf (redacted)</p>
-
-    <!-- OSINT breadcrumb -->
-    <!-- SECRET_LOCATION: /archive/old_logs_2023/ -->
-  </div>
-
-  <div id="msg2" class="mail-content hidden">
-    <h2>Password Audit Reminder</h2>
-    <p>
-      Our system detected that your password pattern matches known weak structures.
-      Please avoid using predictable templates such as:
-    </p>
-
-    <ul>
-      <li><code>rubble####</code></li>
-      <li><code>YabbaDabbaDo123</code></li>
-    </ul>
-
-    <!-- Hidden credential -->
-    <!-- TEMP-PASS: Flintstones!2024 -->
-  </div>
-
-  <div id="msg3" class="mail-content hidden">
-    <h2>Reactor Noise Logs</h2>
-    <p>
-      Per your request, the reactor acoustic profile is attached.
-      The humming frequency spike around 03:12 is consistent with coolant cavitation.
-    </p>
-
-    <!-- Hidden breadcrumb -->
-    <!-- AUDIO-LOG: /assets/logs/reactor_0312.wav -->
+<div class="mail-viewer" id="mailViewer">
+  <div class="mail-placeholder">
+    <h3>Select a message</h3>
+    <p>Choose any thread to review the Kish Island intel trail.</p>
   </div>
 </div>
 
